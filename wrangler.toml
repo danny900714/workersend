@@ -52,7 +52,7 @@ enabled = true
 [[d1_databases]]
 binding = "DB"
 database_name = "workersend"
-database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+database_id = "614f301a-d559-4503-acb7-1b8903a6531b"
 
 # Bind a dispatch namespace. Use Workers for Platforms to deploy serverless functions programmatically on behalf of your customers.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#dispatch-namespace-bindings-workers-for-platforms
@@ -81,9 +81,9 @@ database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "KV"
+id = "cfdc83e221b440d796cca3cf57090c4f"
 
 # Bind an mTLS certificate. Use to present a client certificate when communicating with another service.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#mtls-certificates

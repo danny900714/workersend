@@ -38,14 +38,21 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   ssr: {
+    target: "webworker",
+    external: ["@prisma/client"],
+    noExternal: true,
     resolve: {
       conditions: ["workerd", "worker", "browser"],
+      externalConditions: ["workerd", "worker", "browser"]
     },
   },
   resolve: {
     mainFields: ["browser", "module", "main"],
   },
+  worker: {
+    format: "es",
+  },
   build: {
-    minify: true,
+    minify: "terser",
   },
 });
