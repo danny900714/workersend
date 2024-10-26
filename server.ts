@@ -28,7 +28,7 @@ export default {
             browserTTL: ttl,
             edgeTTL: ttl,
           },
-        }
+        },
       );
     } catch (error) {
       // No-op
