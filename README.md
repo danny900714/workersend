@@ -1,21 +1,13 @@
-# Welcome to Remix + Cloudflare Workers!
+# WorkerSend
 
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+Business email solution powered by Cloudflare Workers©.
 
 ## Development
 
 Run the dev server:
 
 ```sh
-npm run dev
-```
-
-To run Wrangler:
-
-```sh
-npm run build
-npm start
+pnpm start
 ```
 
 ## Typegen
@@ -23,7 +15,7 @@ npm start
 Generate types for your Cloudflare bindings in `wrangler.toml`:
 
 ```sh
-npm run typegen
+pnpm typegen
 ```
 
 You will need to rerun typegen whenever you make changes to `wrangler.toml`.
@@ -35,7 +27,7 @@ If you don't already have an account, then [create a cloudflare account here](ht
 Once that's done, you should be able to deploy your app:
 
 ```sh
-npm run deploy
+pnpm deploy
 ```
 
 ## Styling
