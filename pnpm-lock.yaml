@@ -9,19 +9,22 @@ importers:
   .:
     devDependencies:
       '@cloudflare/vitest-pool-workers':
-        specifier: ^0.5.2
+        specifier: ^0.5.22
         version: 0.5.22(@cloudflare/workers-types@4.20241022.0)(@vitest/runner@2.0.5)(@vitest/snapshot@2.0.5)(vitest@2.0.5(@types/node@22.8.1))
       '@cloudflare/workers-types':
         specifier: ^4.20241022.0
         version: 4.20241022.0
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
       typescript:
-        specifier: ^5.5.2
+        specifier: ^5.6.3
         version: 5.6.3
       vitest:
         specifier: 2.0.5
         version: 2.0.5(@types/node@22.8.1)
       wrangler:
-        specifier: ^3.60.3
+        specifier: ^3.83.0
         version: 3.83.0(@cloudflare/workers-types@4.20241022.0)
 
 packages:
@@ -766,6 +769,11 @@ packages:
   postcss@8.4.47:
     resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
     engines: {node: ^10 || ^12 || >=14}
+
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   printable-characters@1.0.42:
     resolution: {integrity: sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==}
@@ -1602,6 +1610,8 @@ snapshots:
       nanoid: 3.3.7
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  prettier@3.3.3: {}
 
   printable-characters@1.0.42: {}
 
