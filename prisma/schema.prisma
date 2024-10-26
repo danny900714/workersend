@@ -5,10 +5,20 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(uuid())
+  fullName   String
+  email      String   @unique
+  avatar     String   @unique
+  createTime DateTime @default(now())
+  updateTime DateTime @default(now())
 }
