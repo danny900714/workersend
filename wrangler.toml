@@ -9,6 +9,7 @@ directory = "./build/client"
 
 [build]
 command = "remix vite:build"
+watch_dir = ["app", "email", "public"]
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
