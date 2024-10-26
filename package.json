@@ -1,26 +1,33 @@
 {
   "name": "workersend",
   "description": "Business email solution powered by Cloudflare Workers©",
-  "version": "0.1.0",
   "type": "module",
+  "version": "0.1.0",
+  "license": "OSL-3.0",
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "email",
+    "remix"
+  ],
+  "homepage": "https://github.com/danny900714/workersend#readme",
+  "bugs": "https://github.com/danny900714/workersend/issues",
+  "repository": "github:danny900714/workersend",
+  "author": "Danny Zhao <danny900714@gmail.com>",
   "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
-    "build": "remix vite:build",
-    "deploy": "wrangler deploy",
-    "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
     "typegen": "wrangler types",
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@cloudflare/kv-asset-handler": "^0.3.4",
     "@remix-run/cloudflare": "^2.13.1",
     "@remix-run/react": "^2.13.1",
-    "@remix-run/server-runtime": "^2.13.1",
     "isbot": "^4.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

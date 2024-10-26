@@ -6,7 +6,9 @@ compatibility_flags = ["nodejs_compat"]
 
 [assets]
 directory = "./build/client"
-binding = "ASSETS"
+
+[build]
+command = "remix vite:build"
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
