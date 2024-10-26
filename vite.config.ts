@@ -39,11 +39,9 @@ export default defineConfig({
   ],
   ssr: {
     target: "webworker",
-    external: ["@prisma/client"],
     noExternal: true,
     resolve: {
       conditions: ["workerd", "worker", "browser"],
-      externalConditions: ["workerd", "worker", "browser"]
     },
   },
   resolve: {

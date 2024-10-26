@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 directory = "./build/client"
 
 [build]
-command = "prisma generate && remix vite:build"
+command = "remix vite:build"
 watch_dir = ["app", "email", "public"]
 
 # Workers Logs
