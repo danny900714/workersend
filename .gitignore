@@ -170,5 +170,8 @@ dist
 .dev.vars
 .wrangler/
 
+# Remix
+build
+
 # Jetbrains
 .idea
