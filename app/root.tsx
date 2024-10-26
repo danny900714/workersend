@@ -1,29 +1,31 @@
 import {
+  LinksFunction,
+  LoaderFunctionArgs,
+  redirect,
+} from "@remix-run/cloudflare";
+import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/cloudflare";
-
+import { createClient } from "~/lib/prisma";
 import stylesheet from "~/tailwind.css?url";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export async function loader({ context, request }: LoaderFunctionArgs) {
+  const url = new URL(request.url);
+  const prisma = createClient(context);
+  const userCount = await prisma.user.count();
+  if (userCount === 0 && url.pathname !== "/setup") throw redirect("/setup");
+  return null;
+}
+
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -42,5 +44,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <Layout>
+      <Outlet />
+    </Layout>
+  );
 }
